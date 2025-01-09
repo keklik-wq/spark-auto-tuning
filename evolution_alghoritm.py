@@ -8,6 +8,7 @@ from pyspark.sql import SparkSession
 # Инициализация Spark Session
 spark = SparkSession.builder.appName("OptimizeShufflePartitions").getOrCreate()
 
+
 def evaluate_shuffle_partitions(partitions):
     partitions = int(partitions[0])
     spark.conf.set("spark.sql.shuffle.partitions", partitions)
